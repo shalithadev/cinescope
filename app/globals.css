@@ -143,6 +143,14 @@
   border-color: hsl(var(--border));
 }
 
+.success.group.toast {
+  border: 0.5px solid hsl(var(--primary));
+}
+
+.dark .success.group.toast {
+  border: 0.5px solid hsl(var(--primary));
+}
+
 .movie-card-hover {
   transition: transform 0.3s ease-in-out;
 }

@@ -1,64 +1,68 @@
-"use client"
+"use client";
 
-import type React from "react"
+import type React from "react";
 
-import { useState, useEffect } from "react"
-import { useParams } from "next/navigation"
-import Link from "next/link"
-import { motion } from "framer-motion"
-import { ArrowLeft, Calendar, Clock, Star } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import { Textarea } from "@/components/ui/textarea"
-import { Skeleton } from "@/components/ui/skeleton"
-import { getMovieById, getReviewsForMovie } from "@/lib/data"
+import { useState, useEffect } from "react";
+import { useParams } from "next/navigation";
+import Link from "next/link";
+import { motion } from "framer-motion";
+import { ArrowLeft, Calendar, Clock, Star } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Textarea } from "@/components/ui/textarea";
+import { Skeleton } from "@/components/ui/skeleton";
+import { getMovieById, getReviewsForMovie } from "@/lib/data";
 
 export default function MovieDetailsPage() {
-  const { id } = useParams()
-  const [isLoading, setIsLoading] = useState(true)
-  const [reviewText, setReviewText] = useState("")
-  const [rating, setRating] = useState(0)
-  const [isSubmitting, setIsSubmitting] = useState(false)
+  const { id } = useParams();
+  const [isLoading, setIsLoading] = useState(true);
+  const [reviewText, setReviewText] = useState("");
+  const [rating, setRating] = useState(0);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const movie = getMovieById(id as string)
-  const reviews = getReviewsForMovie(id as string)
+  const movie = getMovieById(id as string);
+  const reviews = getReviewsForMovie(id as string);
 
   useEffect(() => {
     // Simulate loading
     const timer = setTimeout(() => {
-      setIsLoading(false)
-    }, 1500)
+      setIsLoading(false);
+    }, 1500);
 
-    return () => clearTimeout(timer)
-  }, [])
+    return () => clearTimeout(timer);
+  }, []);
 
   const handleSubmitReview = (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsSubmitting(true)
+    e.preventDefault();
+    setIsSubmitting(true);
 
     // Simulate API call
     setTimeout(() => {
-      setIsSubmitting(false)
-      setReviewText("")
-      setRating(0)
-      alert("Review submitted successfully! It will be visible after moderation.")
-    }, 1000)
-  }
+      setIsSubmitting(false);
+      setReviewText("");
+      setRating(0);
+      alert(
+        "Review submitted successfully! It will be visible after moderation.",
+      );
+    }, 1000);
+  };
 
   if (!movie && !isLoading) {
     return (
       <div className="container mx-auto px-4 py-12">
         <div className="flex flex-col items-center justify-center py-12">
           <h1 className="text-2xl font-bold">Movie not found</h1>
-          <p className="text-muted-foreground">The movie you're looking for doesn't exist.</p>
+          <p className="text-muted-foreground">
+            The movie you&apos;re looking for doesn&apos;t exist.
+          </p>
           <Link href="/" className="mt-4">
             <Button>Back to Home</Button>
           </Link>
         </div>
       </div>
-    )
+    );
   }
 
   return (
@@ -97,10 +101,14 @@ export default function MovieDetailsPage() {
                 backgroundPosition: "center 20%",
               }}
             >
-              <div className="absolute inset-0 bg-linear-to-t from-background to-transparent" />
+              <div className="bg-linear-to-t from-background absolute inset-0 to-transparent" />
               <div className="container relative mx-auto flex h-full items-end px-4 pb-8">
                 <Link href="/" className="absolute left-4 top-4">
-                  <Button variant="outline" size="icon" className="rounded-full bg-background/50 backdrop-blur-xs">
+                  <Button
+                    variant="outline"
+                    size="icon"
+                    className="bg-background/50 backdrop-blur-xs rounded-full"
+                  >
                     <ArrowLeft className="h-4 w-4" />
                   </Button>
                 </Link>
@@ -119,7 +127,10 @@ export default function MovieDetailsPage() {
 
                 <div className="mt-6 flex-1 space-y-4 md:mt-0">
                   <h1 className="text-3xl font-bold">
-                    {movie.title} <span className="text-muted-foreground">({movie.year})</span>
+                    {movie.title}{" "}
+                    <span className="text-muted-foreground">
+                      ({movie.year})
+                    </span>
                   </h1>
 
                   <div className="flex flex-wrap items-center gap-4">
@@ -128,12 +139,14 @@ export default function MovieDetailsPage() {
                       <span className="font-medium">{movie.rating}/10</span>
                     </div>
                     <div className="flex items-center">
-                      <Clock className="mr-1 h-4 w-4 text-muted-foreground" />
+                      <Clock className="text-muted-foreground mr-1 h-4 w-4" />
                       <span>{movie.runtime} min</span>
                     </div>
                     <div className="flex items-center">
-                      <Calendar className="mr-1 h-4 w-4 text-muted-foreground" />
-                      <span>{new Date(movie.releaseDate).toLocaleDateString()}</span>
+                      <Calendar className="text-muted-foreground mr-1 h-4 w-4" />
+                      <span>
+                        {new Date(movie.releaseDate).toLocaleDateString()}
+                      </span>
                     </div>
                   </div>
 
@@ -147,12 +160,16 @@ export default function MovieDetailsPage() {
 
                   <div>
                     <h2 className="text-xl font-semibold">Overview</h2>
-                    <p className="mt-2 text-muted-foreground">{movie.overview}</p>
+                    <p className="text-muted-foreground mt-2">
+                      {movie.overview}
+                    </p>
                   </div>
 
                   <div>
                     <h2 className="text-xl font-semibold">Director</h2>
-                    <p className="mt-2 text-muted-foreground">{movie.director}</p>
+                    <p className="text-muted-foreground mt-2">
+                      {movie.director}
+                    </p>
                   </div>
                 </div>
               </div>
@@ -166,43 +183,70 @@ export default function MovieDetailsPage() {
                       <Card key={review.id}>
                         <CardHeader className="flex flex-row items-center gap-4 space-y-0">
                           <Avatar>
-                            <AvatarImage src={review.userAvatar} alt={review.userName} />
-                            <AvatarFallback>{review.userName.charAt(0)}</AvatarFallback>
+                            <AvatarImage
+                              src={review.userAvatar}
+                              alt={review.userName}
+                            />
+                            <AvatarFallback>
+                              {review.userName.charAt(0)}
+                            </AvatarFallback>
                           </Avatar>
                           <div>
-                            <CardTitle className="text-base">{review.userName}</CardTitle>
+                            <CardTitle className="text-base">
+                              {review.userName}
+                            </CardTitle>
                             <div className="flex items-center">
                               <Star className="mr-1 h-4 w-4 fill-yellow-500 text-yellow-500" />
-                              <span className="text-sm">{review.rating}/10</span>
-                              <span className="mx-2 text-xs text-muted-foreground">•</span>
-                              <span className="text-xs text-muted-foreground">
-                                {new Date(review.createdAt).toLocaleDateString()}
+                              <span className="text-sm">
+                                {review.rating}/10
+                              </span>
+                              <span className="text-muted-foreground mx-2 text-xs">
+                                •
+                              </span>
+                              <span className="text-muted-foreground text-xs">
+                                {new Date(
+                                  review.createdAt,
+                                ).toLocaleDateString()}
                               </span>
                             </div>
                           </div>
                         </CardHeader>
                         <CardContent>
-                          <p className="text-muted-foreground">{review.comment}</p>
+                          <p className="text-muted-foreground">
+                            {review.comment}
+                          </p>
                         </CardContent>
                       </Card>
                     ))
                   ) : (
-                    <p className="text-center text-muted-foreground">No reviews yet. Be the first to review!</p>
+                    <p className="text-muted-foreground text-center">
+                      No reviews yet. Be the first to review!
+                    </p>
                   )}
                 </div>
 
                 <div className="mt-8">
                   <h3 className="text-xl font-semibold">Write a Review</h3>
-                  <form onSubmit={handleSubmitReview} className="mt-4 space-y-4">
+                  <form
+                    onSubmit={handleSubmitReview}
+                    className="mt-4 space-y-4"
+                  >
                     <div>
                       <div className="mb-2 flex items-center">
                         <span className="mr-2">Rating:</span>
                         <div className="flex">
                           {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((star) => (
-                            <button key={star} type="button" onClick={() => setRating(star)} className="p-1">
+                            <button
+                              key={star}
+                              type="button"
+                              onClick={() => setRating(star)}
+                              className="p-1"
+                            >
                               <Star
                                 className={`h-5 w-5 ${
-                                  star <= rating ? "fill-yellow-500 text-yellow-500" : "text-muted-foreground"
+                                  star <= rating
+                                    ? "fill-yellow-500 text-yellow-500"
+                                    : "text-muted-foreground"
                                 }`}
                               />
                             </button>
@@ -216,7 +260,12 @@ export default function MovieDetailsPage() {
                       onChange={(e) => setReviewText(e.target.value)}
                       className="min-h-[120px]"
                     />
-                    <Button type="submit" disabled={isSubmitting || rating === 0 || !reviewText.trim()}>
+                    <Button
+                      type="submit"
+                      disabled={
+                        isSubmitting || rating === 0 || !reviewText.trim()
+                      }
+                    >
                       {isSubmitting ? "Submitting..." : "Submit Review"}
                     </Button>
                   </form>
@@ -227,6 +276,5 @@ export default function MovieDetailsPage() {
         )
       )}
     </div>
-  )
+  );
 }
-
