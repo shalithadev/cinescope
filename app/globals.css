@@ -1,26 +1,88 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 165 74% 47%; /* #1dd1a1 */
+    --primary-foreground: 210 40% 98%;
+    --secondary: 165 74% 95%;
+    --secondary-foreground: 165 74% 20%;
+    --muted: 165 74% 95%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 165 74% 95%;
+    --accent-foreground: 165 74% 20%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 165 74% 90%;
+    --input: 165 74% 90%;
+    --ring: 165 74% 47%;
+    --radius: 0.5rem;
+
+    /* Chart colors */
+    --chart-1: 165 74% 47%;
+    --chart-2: 165 74% 67%;
+    --chart-3: 165 74% 27%;
+    --chart-4: 190 74% 47%;
+    --chart-5: 140 74% 47%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 165 74% 47%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 165 74% 15%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 165 74% 15%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 165 74% 15%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 165 74% 15%;
+    --input: 165 74% 15%;
+    --ring: 165 74% 47%;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
 }
+
+.movie-card-hover {
+  transition: transform 0.3s ease-in-out;
+}
+
+.movie-card-hover:hover {
+  transform: translateY(-8px);
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
