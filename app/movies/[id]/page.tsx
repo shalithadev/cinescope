@@ -65,7 +65,7 @@ export default function MovieDetailsPage() {
     <div className="min-h-screen">
       {isLoading ? (
         <div className="w-full">
-          <Skeleton className="aspect-[21/9] w-full" />
+          <Skeleton className="aspect-21/9 w-full" />
           <div className="container mx-auto px-4 py-8">
             <div className="flex flex-col md:flex-row md:gap-8">
               <Skeleton className="h-[400px] w-[300px] rounded-lg" />
@@ -97,10 +97,10 @@ export default function MovieDetailsPage() {
                 backgroundPosition: "center 20%",
               }}
             >
-              <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent" />
+              <div className="absolute inset-0 bg-linear-to-t from-background to-transparent" />
               <div className="container relative mx-auto flex h-full items-end px-4 pb-8">
                 <Link href="/" className="absolute left-4 top-4">
-                  <Button variant="outline" size="icon" className="rounded-full bg-background/50 backdrop-blur-sm">
+                  <Button variant="outline" size="icon" className="rounded-full bg-background/50 backdrop-blur-xs">
                     <ArrowLeft className="h-4 w-4" />
                   </Button>
                 </Link>

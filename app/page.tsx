@@ -36,7 +36,7 @@ export default function HomePage() {
         <section className="relative overflow-hidden">
           {/* Background Image with Overlay */}
           <div className="absolute inset-0 z-0">
-            <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/70 dark:from-black/80 dark:via-black/60 dark:to-black/80 z-10"></div>
+            <div className="absolute inset-0 bg-linear-to-r from-black/70 via-black/50 to-black/70 dark:from-black/80 dark:via-black/60 dark:to-black/80 z-10"></div>
             <div className="absolute inset-0 bg-[url('/placeholder.svg?height=1080&width=1920')] bg-cover bg-center opacity-60 dark:opacity-40"></div>
 
             {/* Animated Film Strips */}
@@ -45,7 +45,7 @@ export default function HomePage() {
                 {[...Array(5)].map((_, i) => (
                   <div
                     key={i}
-                    className="h-16 bg-black/20 dark:bg-white/10 backdrop-blur-sm flex items-center"
+                    className="h-16 bg-black/20 dark:bg-white/10 backdrop-blur-xs flex items-center"
                     style={{
                       transform: `translateX(${i % 2 === 0 ? "-20%" : "20%"})`,
                     }}
@@ -68,7 +68,7 @@ export default function HomePage() {
                 <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl text-white drop-shadow-md">
                   Discover Amazing Movies
                 </h1>
-                <p className="mx-auto max-w-[700px] text-lg md:text-xl text-white/80 drop-shadow">
+                <p className="mx-auto max-w-[700px] text-lg md:text-xl text-white/80 drop-shadow-sm">
                   Explore our collection of the best movies from around the world.
                 </p>
               </div>
@@ -80,7 +80,7 @@ export default function HomePage() {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="bg-primary/10 backdrop-blur-sm border-primary/30 text-white hover:bg-primary/20 hover:text-white"
+                  className="bg-primary/10 backdrop-blur-xs border-primary/30 text-white hover:bg-primary/20 hover:text-white"
                 >
                   Latest Releases
                 </Button>
