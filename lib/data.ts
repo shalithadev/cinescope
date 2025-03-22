@@ -1,48 +1,48 @@
 export type Movie = {
-  id: string
-  title: string
-  year: number
-  director: string
-  genre: string[]
-  rating: number
-  runtime: number
-  poster: string
-  backdrop: string
-  overview: string
-  releaseDate: string
-  status: "published" | "draft" | "archived"
-  createdAt: string
-  updatedAt: string
-}
+  id: string;
+  title: string;
+  year: number;
+  director: string;
+  genre: string[];
+  rating: number;
+  runtime: number;
+  poster: string;
+  backdrop: string;
+  overview: string;
+  releaseDate: string;
+  status: "published" | "draft" | "archived";
+  createdAt: string;
+  updatedAt: string;
+};
 
 export type User = {
-  id: string
-  name: string
-  email: string
-  role: "admin" | "moderator" | "user"
-  avatar: string
-  status: "active" | "suspended"
-  createdAt: string
-}
+  id: string;
+  name: string;
+  email: string;
+  role: "admin" | "moderator" | "user";
+  avatar: string;
+  status: "active" | "suspended";
+  createdAt: string;
+};
 
 export type Review = {
-  id: string
-  movieId: string
-  userId: string
-  userName: string
-  userAvatar: string
-  rating: number
-  comment: string
-  status: "approved" | "pending" | "rejected"
-  createdAt: string
-}
+  id: string;
+  movieId: string;
+  userId: string;
+  userName: string;
+  userAvatar: string;
+  rating: number;
+  comment: string;
+  status: "approved" | "pending" | "rejected";
+  createdAt: string;
+};
 
 export type AnalyticsData = {
-  viewsByMonth: { month: string; views: number }[]
-  genreDistribution: { genre: string; count: number }[]
-  ratingDistribution: { rating: string; count: number }[]
-  topMovies: { title: string; views: number }[]
-}
+  viewsByMonth: { month: string; views: number }[];
+  genreDistribution: { genre: string; count: number }[];
+  ratingDistribution: { rating: string; count: number }[];
+  topMovies: { title: string; views: number }[];
+};
 
 // Dummy Movies Data
 export const movies: Movie[] = [
@@ -54,7 +54,9 @@ export const movies: Movie[] = [
     genre: ["Action", "Sci-Fi", "Thriller"],
     rating: 8.8,
     runtime: 148,
-    poster: "/placeholder.svg?height=500&width=300",
+    // poster: "/placeholder.svg?height=500&width=300",
+    poster:
+      "https://m.media-amazon.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_FMjpg_UX700_.jpg",
     backdrop: "/placeholder.svg?height=800&width=1200",
     overview:
       "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.",
@@ -71,7 +73,8 @@ export const movies: Movie[] = [
     genre: ["Action", "Crime", "Drama"],
     rating: 9.0,
     runtime: 152,
-    poster: "/placeholder.svg?height=500&width=300",
+    poster:
+      "https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_FMjpg_UY2048_.jpg",
     backdrop: "/placeholder.svg?height=800&width=1200",
     overview:
       "When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice.",
@@ -88,7 +91,8 @@ export const movies: Movie[] = [
     genre: ["Crime", "Drama"],
     rating: 8.9,
     runtime: 154,
-    poster: "/placeholder.svg?height=500&width=300",
+    poster:
+      "https://m.media-amazon.com/images/M/MV5BYTViYTE3ZGQtNDBlMC00ZTAyLTkyODMtZGRiZDg0MjA2YThkXkEyXkFqcGc@._V1_FMjpg_UX1055_.jpg",
     backdrop: "/placeholder.svg?height=800&width=1200",
     overview:
       "The lives of two mob hitmen, a boxer, a gangster and his wife, and a pair of diner bandits intertwine in four tales of violence and redemption.",
@@ -105,7 +109,8 @@ export const movies: Movie[] = [
     genre: ["Drama"],
     rating: 9.3,
     runtime: 142,
-    poster: "/placeholder.svg?height=500&width=300",
+    poster:
+      "https://m.media-amazon.com/images/M/MV5BMDAyY2FhYjctNDc5OS00MDNlLThiMGUtY2UxYWVkNGY2ZjljXkEyXkFqcGc@._V1_FMjpg_UX1200_.jpg",
     backdrop: "/placeholder.svg?height=800&width=1200",
     overview:
       "Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.",
@@ -122,7 +127,8 @@ export const movies: Movie[] = [
     genre: ["Crime", "Drama"],
     rating: 9.2,
     runtime: 175,
-    poster: "/placeholder.svg?height=500&width=300",
+    poster:
+      "https://m.media-amazon.com/images/M/MV5BNGEwYjgwOGQtYjg5ZS00Njc1LTk2ZGEtM2QwZWQ2NjdhZTE5XkEyXkFqcGc@._V1_FMjpg_UY1982_.jpg",
     backdrop: "/placeholder.svg?height=800&width=1200",
     overview:
       "The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son.",
@@ -139,9 +145,11 @@ export const movies: Movie[] = [
     genre: ["Adventure", "Drama", "Sci-Fi"],
     rating: 8.6,
     runtime: 169,
-    poster: "/placeholder.svg?height=500&width=300",
+    poster:
+      "https://m.media-amazon.com/images/M/MV5BYzdjMDAxZGItMjI2My00ODA1LTlkNzItOWFjMDU5ZDJlYWY3XkEyXkFqcGc@._V1_FMjpg_UY3600_.jpg",
     backdrop: "/placeholder.svg?height=800&width=1200",
-    overview: "A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival.",
+    overview:
+      "A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival.",
     releaseDate: "2014-11-07",
     status: "published",
     createdAt: "2023-01-20T12:00:00Z",
@@ -155,7 +163,8 @@ export const movies: Movie[] = [
     genre: ["Action", "Sci-Fi"],
     rating: 8.7,
     runtime: 136,
-    poster: "/placeholder.svg?height=500&width=300",
+    poster:
+      "https://m.media-amazon.com/images/M/MV5BZjVkOGM1ZTctZGZmOC00MTM0LWFjYjctNjg2MTg1YTM4N2VlXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
     backdrop: "/placeholder.svg?height=800&width=1200",
     overview:
       "A computer hacker learns from mysterious rebels about the true nature of his reality and his role in the war against its controllers.",
@@ -172,7 +181,8 @@ export const movies: Movie[] = [
     genre: ["Comedy", "Drama", "Thriller"],
     rating: 8.6,
     runtime: 132,
-    poster: "/placeholder.svg?height=500&width=300",
+    poster:
+      "https://m.media-amazon.com/images/M/MV5BYjk1Y2U4MjQtY2ZiNS00OWQyLWI3MmYtZWUwNmRjYWRiNWNhXkEyXkFqcGc@._V1_FMjpg_UY3556_.jpg",
     backdrop: "/placeholder.svg?height=800&width=1200",
     overview:
       "Greed and class discrimination threaten the newly formed symbiotic relationship between the wealthy Park family and the destitute Kim clan.",
@@ -249,7 +259,7 @@ export const movies: Movie[] = [
     createdAt: "2023-01-26T12:00:00Z",
     updatedAt: "2023-01-26T12:00:00Z",
   },
-]
+];
 
 // Dummy Users Data
 export const users: User[] = [
@@ -316,7 +326,7 @@ export const users: User[] = [
     status: "active",
     createdAt: "2023-01-07T12:00:00Z",
   },
-]
+];
 
 // Dummy Reviews Data
 export const reviews: Review[] = [
@@ -327,7 +337,8 @@ export const reviews: Review[] = [
     userName: "Bob Johnson",
     userAvatar: "/placeholder.svg?height=40&width=40",
     rating: 9,
-    comment: "One of the most mind-bending movies I've ever seen. Christopher Nolan is a genius!",
+    comment:
+      "One of the most mind-bending movies I've ever seen. Christopher Nolan is a genius!",
     status: "approved",
     createdAt: "2023-02-01T12:00:00Z",
   },
@@ -338,7 +349,8 @@ export const reviews: Review[] = [
     userName: "Alice Williams",
     userAvatar: "/placeholder.svg?height=40&width=40",
     rating: 8,
-    comment: "Great concept and execution, but the ending left me a bit confused.",
+    comment:
+      "Great concept and execution, but the ending left me a bit confused.",
     status: "approved",
     createdAt: "2023-02-02T12:00:00Z",
   },
@@ -349,7 +361,8 @@ export const reviews: Review[] = [
     userName: "Bob Johnson",
     userAvatar: "/placeholder.svg?height=40&width=40",
     rating: 10,
-    comment: "Heath Ledger's performance as the Joker is legendary. One of the best superhero movies ever made.",
+    comment:
+      "Heath Ledger's performance as the Joker is legendary. One of the best superhero movies ever made.",
     status: "approved",
     createdAt: "2023-02-03T12:00:00Z",
   },
@@ -394,7 +407,8 @@ export const reviews: Review[] = [
     userName: "Bob Johnson",
     userAvatar: "/placeholder.svg?height=40&width=40",
     rating: 10,
-    comment: "A perfect social commentary with unexpected twists. Deserved the Oscar for Best Picture.",
+    comment:
+      "A perfect social commentary with unexpected twists. Deserved the Oscar for Best Picture.",
     status: "pending",
     createdAt: "2023-02-07T12:00:00Z",
   },
@@ -405,11 +419,12 @@ export const reviews: Review[] = [
     userName: "Charlie Brown",
     userAvatar: "/placeholder.svg?height=40&width=40",
     rating: 8,
-    comment: "Joaquin Phoenix's performance is haunting. A disturbing but powerful character study.",
+    comment:
+      "Joaquin Phoenix's performance is haunting. A disturbing but powerful character study.",
     status: "pending",
     createdAt: "2023-02-08T12:00:00Z",
   },
-]
+];
 
 // Dummy Analytics Data
 export const analyticsData: AnalyticsData = {
@@ -451,35 +466,36 @@ export const analyticsData: AnalyticsData = {
     { title: "Pulp Fiction", views: 9800 },
     { title: "The Godfather", views: 9200 },
   ],
-}
+};
 
 // Helper function to get all unique genres from movies
 export function getAllGenres(): string[] {
-  const genreSet = new Set<string>()
+  const genreSet = new Set<string>();
   movies.forEach((movie) => {
     movie.genre.forEach((genre) => {
-      genreSet.add(genre)
-    })
-  })
-  return Array.from(genreSet).sort()
+      genreSet.add(genre);
+    });
+  });
+  return Array.from(genreSet).sort();
 }
 
 // Helper function to get all unique years from movies
 export function getAllYears(): number[] {
-  const yearSet = new Set<number>()
+  const yearSet = new Set<number>();
   movies.forEach((movie) => {
-    yearSet.add(movie.year)
-  })
-  return Array.from(yearSet).sort((a, b) => b - a)
+    yearSet.add(movie.year);
+  });
+  return Array.from(yearSet).sort((a, b) => b - a);
 }
 
 // Helper function to get a movie by ID
 export function getMovieById(id: string): Movie | undefined {
-  return movies.find((movie) => movie.id === id)
+  return movies.find((movie) => movie.id === id);
 }
 
 // Helper function to get reviews for a specific movie
 export function getReviewsForMovie(movieId: string): Review[] {
-  return reviews.filter((review) => review.movieId === movieId && review.status === "approved")
+  return reviews.filter(
+    (review) => review.movieId === movieId && review.status === "approved",
+  );
 }
-
