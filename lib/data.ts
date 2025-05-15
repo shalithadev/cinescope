@@ -83,24 +83,24 @@ export const movies: Movie[] = [
     createdAt: "2023-01-16T12:00:00Z",
     updatedAt: "2023-01-16T12:00:00Z",
   },
-  {
-    id: "3",
-    title: "Pulp Fiction",
-    year: 1994,
-    director: "Quentin Tarantino",
-    genre: ["Crime", "Drama"],
-    rating: 8.9,
-    runtime: 154,
-    poster:
-      "https://m.media-amazon.com/images/M/MV5BYTViYTE3ZGQtNDBlMC00ZTAyLTkyODMtZGRiZDg0MjA2YThkXkEyXkFqcGc@._V1_FMjpg_UX1055_.jpg",
-    backdrop: "/placeholder.svg?height=800&width=1200",
-    overview:
-      "The lives of two mob hitmen, a boxer, a gangster and his wife, and a pair of diner bandits intertwine in four tales of violence and redemption.",
-    releaseDate: "1994-10-14",
-    status: "published",
-    createdAt: "2023-01-17T12:00:00Z",
-    updatedAt: "2023-01-17T12:00:00Z",
-  },
+  // {
+  //   id: "3",
+  //   title: "Pulp Fiction",
+  //   year: 1994,
+  //   director: "Quentin Tarantino",
+  //   genre: ["Crime", "Drama"],
+  //   rating: 8.9,
+  //   runtime: 154,
+  //   poster:
+  //     "https://m.media-amazon.com/images/M/MV5BYTViYTE3ZGQtNDBlMC00ZTAyLTkyODMtZGRiZDg0MjA2YThkXkEyXkFqcGc@._V1_FMjpg_UX1055_.jpg",
+  //   backdrop: "/placeholder.svg?height=800&width=1200",
+  //   overview:
+  //     "The lives of two mob hitmen, a boxer, a gangster and his wife, and a pair of diner bandits intertwine in four tales of violence and redemption.",
+  //   releaseDate: "1994-10-14",
+  //   status: "published",
+  //   createdAt: "2023-01-17T12:00:00Z",
+  //   updatedAt: "2023-01-17T12:00:00Z",
+  // },
   {
     id: "4",
     title: "The Shawshank Redemption",
@@ -199,7 +199,8 @@ export const movies: Movie[] = [
     genre: ["Action", "Adventure", "Sci-Fi"],
     rating: 8.4,
     runtime: 181,
-    poster: "/placeholder.svg?height=500&width=300",
+    poster:
+      "https://m.media-amazon.com/images/M/MV5BMTc5MDE2ODcwNV5BMl5BanBnXkFtZTgwMzI2NzQ2NzM@._V1_FMjpg_UY2048_.jpg",
     backdrop: "/placeholder.svg?height=800&width=1200",
     overview:
       "After the devastating events of Avengers: Infinity War, the universe is in ruins. With the help of remaining allies, the Avengers assemble once more in order to reverse Thanos' actions and restore balance to the universe.",
@@ -216,7 +217,8 @@ export const movies: Movie[] = [
     genre: ["Crime", "Drama", "Thriller"],
     rating: 8.4,
     runtime: 122,
-    poster: "/placeholder.svg?height=500&width=300",
+    poster:
+      "https://m.media-amazon.com/images/M/MV5BNzY3OWQ5NDktNWQ2OC00ZjdlLThkMmItMDhhNDk3NTFiZGU4XkEyXkFqcGc@._V1_FMjpg_UY4096_.jpg",
     backdrop: "/placeholder.svg?height=800&width=1200",
     overview:
       "In Gotham City, mentally troubled comedian Arthur Fleck is disregarded and mistreated by society. He then embarks on a downward spiral of revolution and bloody crime. This path brings him face-to-face with his alter-ego: the Joker.",
@@ -233,7 +235,8 @@ export const movies: Movie[] = [
     genre: ["Action", "Adventure", "Drama"],
     rating: 8.0,
     runtime: 155,
-    poster: "/placeholder.svg?height=500&width=300",
+    poster:
+      "https://m.media-amazon.com/images/M/MV5BNWIyNmU5MGYtZDZmNi00ZjAwLWJlYjgtZTc0ZGIxMDE4ZGYwXkEyXkFqcGc@._V1_FMjpg_UY2552_.jpg",
     backdrop: "/placeholder.svg?height=800&width=1200",
     overview:
       "Feature adaptation of Frank Herbert's science fiction novel, about the son of a noble family entrusted with the protection of the most valuable asset and most vital element in the galaxy.",
