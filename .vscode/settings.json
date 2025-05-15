@@ -1,5 +1,19 @@
 {
-  "cSpell.words": ["cinescope", "doesn", "Sonner", "Stylesheet", "toploader"],
+  "cSpell.words": [
+    "cinescope",
+    "Darabont",
+    "doesn",
+    "Fukunaga",
+    "hitmen",
+    "Joji",
+    "Joon",
+    "Leiter",
+    "Shawshank",
+    "Sonner",
+    "Stylesheet",
+    "toploader",
+    "Wachowski"
+  ],
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode"
 }
